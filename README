@@ -1,0 +1,88 @@
+WHAT
+  Table sorting for div-tables
+
+
+STATE
+  Pretty crude, but it works (for me/now)
+
+
+USAGE
+  Build your div tables like this:
+
+    <div class="table sortable">
+      <div class="header row">
+        <div class="cell">foo</div>
+        <div class="cell" data-unsortable="true">bar</div>
+          <!-- this ^ wont be sorted -->
+        <div class="cell" data-type="string">quex</div>
+          <!-- the values in the column are sorted as strings -->
+      </div>
+
+      <div class="body row">
+        <div class="cell" data-value="1">$ 1,-</div>
+          <!-- the sorting value = 1 -->
+        <div class="cell">:-)</div>
+        <div class="cell">aaa</div>
+           <!-- the sorting value = 'aaa' and the type = 'string' -->
+      </div>
+
+      <div class="body row">
+        <div class="cell" data-value="2">$ 2,-</div>
+          <!-- the sorting value = 2 -->
+        <div class="cell">:-D</div>
+        <div class="cell" data-value='bbb'>Bbb</div>
+          <!-- the sorting value = 'bbb' and the type is still 'string',
+               only the data-type on the first body row is honoured -->
+      </div>
+
+      <!-- this row wont be touched -->
+      <div class="bottom row">
+        <div>$ 3,-</div>
+        <div>:-))</div>
+        <div>ccc</div>
+      </div>
+    </div>
+
+  And place the init function in the bottom of the page somewhere:
+
+    <script type="text/javascript">
+      initSortable();
+    </script>
+
+
+DETAILS
+  You can sort by number or string (date is on the TODO list (fork and
+  create-it if you feel like it)
+
+  You must supply the data type in div.header.row.
+
+  The default data type is 'number'
+
+  When you have 'markup' within your div you can supply the real value in
+  the data-value attribute.
+
+  You can have multiple sortable div-tables per page.
+
+  The default sort-links are filled with utf-8 characters:
+
+      - U+25BD    WHITE DOWN-POINTING TRIANGLE
+      - U+25B3    WHITE UP-POINTING TRIANGLE
+
+      When selected they will turn into:
+
+      - U+25BC    BLACK DOWN-POINTING TRIANGLE
+      - U+25B2    BLACK UP-POINTING TRIANGLE
+
+  You can alter the presentation of sort links within the script, or by
+  overwriting the sortLinkSymbols Hash after loading the script. (Please
+  refer to the source for details)
+
+  The sort-links are granted the class 'sortlink', so you can specify the
+  right CSS for it.
+
+  The last row in the collection of body rows will be given the class 'last'
+  after sorting. This is usefull for borders, etc.
+
+
+LICENSE
+  MIT, AS-IS. See the LICENSE file for more details

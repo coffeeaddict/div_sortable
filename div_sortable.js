@@ -3,36 +3,8 @@
  *
  * Table sorting for div-tables
  *
- * - STATE -
- * Pretty crude, but it works (for me/now)
+ * See the supplied README file for more details
  *
- * - USAGE -
- * Build your div tables like this:
- *   <div class="table sortable">
- *     <div class="header row">
- *       <div class="cell">foo</div>
- *       <div class="cell" data-unsortable="true">bar</div>
- *         <!-- this ^ wont be sorted -->
- *       <div class="cell">quex</div>
- *     </div>
- *
- *     <div class="body row">
- *       <div class="cell" data-value="1">€ 1,-</div>
- *         <!-- the sorting value = 1 -->
- *       <div class="cell">:-)</div>
- *       <div class="cell" data-type="string">aaa</div>
- *          <!-- the sorting value = 'aaa' and the type = 'string' -->
- *     </div>
- *
- *     <div class="body row">
- *       <div class="cell" data-value="2">€ 2,-</div>
- *         <!-- the sorting value = 2 -->
- *       <div class="cell">:-D</div>
- *       <div class="cell" data-value='bbb' data-type="number">Bbb</div>
- *         <!-- the sorting value = 'bbb' and the type is still 'string',
- *              only the data-type on the first body row is honoured -->
- *     </div>
- *   </div>
  **/
 
 /*
