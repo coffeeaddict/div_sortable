@@ -21,7 +21,7 @@ var tables = new Array();
 
 // set the symbols (or images if you like) for selected and unselected up and
 // down links
-var symbols = $H({
+var sortLinkSymbols = $H({
     unselected: $H({ up: "&#x25b3;", down: "&#x25bd;" }),
     selected:   $H({ up: "&#x25b2;", down: "&#x25bc;" })
 });
@@ -66,13 +66,13 @@ function initSortable() {
 function sortLink(tableCount, colCount, direction) {
     var id     = "su";
     var func   = "sortUp";
-    var symbol = symbols.get('unselected').get('up');
+    var symbol = sortLinkSymbols.get('unselected').get('up');
 
     // when sorting in a different direction, make different links
     if ( direction == "down" ) {
         id     = "sd";
         func   = "sortDown";
-        symbol = symbols.get('unselected').get('down');
+        symbol = sortLinkSymbols.get('unselected').get('down');
     }
 
     var fullId = id + "_" + tableCount + "_" + colCount;
@@ -91,9 +91,9 @@ function sortLink(tableCount, colCount, direction) {
  *
  */
 function unselectSortLink(element) {
-    var symbol = symbols.get('unselected').get('up');
+    var symbol = sortLinkSymbols.get('unselected').get('up');
     if ( element.readAttribute('id').match(/sd_/) ) {
-        symbol = symbols.get('unselected').get('down');
+        symbol = sortLinkSymbols.get('unselected').get('down');
     }
 
     element.update(symbol);
@@ -113,9 +113,9 @@ function setSelectedSortLink(id) {
         }
     });
 
-    var symbol = symbols.get('selected').get('up');
+    var symbol = sortLinkSymbols.get('selected').get('up');
     if ( id.match(/sd_/) ) {
-        symbol = symbols.get('selected').get('down');
+        symbol = sortLinkSymbols.get('selected').get('down');
     }
     
     $(id).update(symbol);
