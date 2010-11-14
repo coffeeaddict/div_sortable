@@ -7,6 +7,10 @@ STATE
 
 
 USAGE
+  Place the needed script tags in your <head />er
+    <script type="text/javascript" src="/javascripts/prototype.js"></script>
+    <script type="text/javascript" src="/javascripts/div_sortable.js"></script>
+
   Build your div tables like this:
 
     <div class="table sortable">
@@ -82,6 +86,11 @@ DETAILS
 
   The last row in the collection of body rows will be given the class 'last'
   after sorting. This is usefull for borders, etc.
+
+
+REQUIRMENTS
+  You will need Prototype for this one (I suspect 1.5+ will do, was developed 
+  using 1.6)
 
 
 LICENSE
