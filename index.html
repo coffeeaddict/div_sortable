@@ -3,10 +3,11 @@
   <head>
     <script type="text/javascript" src="http://prototypejs.org/assets/2009/8/31/prototype.js"></script>
     <script type="text/javascript" src="div_sortable.js"></script>
-    <title>test</title>
+    <title>div_sortable example / demo</title>
 
     <style>
       body   { font-family: sans-serif }
+      a      { text-decoration: none; color: black }
 
       /* HOWTO: make div tables */
       .table { display: table }
@@ -26,7 +27,6 @@
                       border-top: double black 3px;
                     }
       .last .cell   { border: none }
-
     </style>
   </head>
 
@@ -63,7 +63,7 @@
           <div class="cell">ddd</div>
         </div>
 
-        <div class="body row">
+        <div class="last body row">
           <div class="cell" data-value="3">$ 3,-</div>
           <div class="cell">:-D</div>
           <div class="cell">ccc</div>
@@ -105,7 +105,7 @@
           <div class="cell">ddd</div>
         </div>
 
-        <div class="body row">
+        <div class="last body row">
           <div class="cell" data-value="3">$ 3,-</div>
           <div class="cell">:-D</div>
           <div class="cell">ccc</div>
@@ -118,6 +118,9 @@
         </div>
       </div>
     </div>
+
+    <a href="http://github.com/coffeeaddict/div_sortable"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+
 
     <script type="text/javascript">
       initSortable();
