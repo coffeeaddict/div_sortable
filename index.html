@@ -1,1 +1,126 @@
-My GitHub Page
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <script type="text/javascript" src="http://prototypejs.org/assets/2009/8/31/prototype.js"></script>
+    <script type="text/javascript" src="div_sortable.js"></script>
+    <title>test</title>
+
+    <style>
+      body   { font-family: sans-serif }
+
+      /* HOWTO: make div tables */
+      .table { display: table }
+      .row   { display: table-row }
+      .cell  { display: table-cell }
+
+
+      /* make cell's look nice */
+      .cell { padding: 4px;
+              border-bottom: solid #ccc 1px;
+      }
+
+      /* specialized cells and there make up */
+      .header .cell { font-weight: bold }
+      .bottom .cell { font-style: italic;
+                      border-color: black; 
+                      border-top: double black 3px;
+                    }
+      .last .cell   { border: none }
+
+    </style>
+  </head>
+
+  <body>
+    <h1>Demo</h1>
+
+    <p>A small demonstration of div_sortable.js. The two tables are
+       the same, but you can sort them differently.</p>
+
+    <div style="float: left; display: inline-block">
+      <h2>Table one</h2>
+      <div class="table sortable">
+        <div class="header row">
+          <div class="cell">foo</div>
+          <div class="cell" data-unsortable="true">bar</div>
+          <div class="cell" data-type="string">quex</div>
+        </div>
+
+        <div class="body row">
+          <div class="cell" data-value="1">$ 1,-</div>
+          <div class="cell">:-)</div>
+          <div class="cell">aaa</div>
+        </div>
+
+        <div class="body row">
+          <div class="cell" data-value="2">$ 2,-</div>
+          <div class="cell">:-D</div>
+          <div class="cell" data-value='bbb'>Bbb</div>
+        </div>
+
+        <div class="body row">
+          <div class="cell" data-value="1">$ 1,-</div>
+          <div class="cell">:-)</div>
+          <div class="cell">ddd</div>
+        </div>
+
+        <div class="body row">
+          <div class="cell" data-value="3">$ 3,-</div>
+          <div class="cell">:-D</div>
+          <div class="cell">ccc</div>
+        </div>
+
+        <!-- this row wont be touched -->
+        <div class="bottom row">
+          <div class="cell">$ 7,-</div>
+          <div class="cell">:-))</div>
+          <div class="cell">jjj</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="float: left; display: inline-block; margin-left: 50px;">
+      <h2>Table two</h2>
+      <div class="table sortable">
+        <div class="header row">
+          <div class="cell">foo</div>
+          <div class="cell" data-unsortable="true">bar</div>
+          <div class="cell" data-type="string">quex</div>
+        </div>
+
+        <div class="body row">
+          <div class="cell" data-value="1">$ 1,-</div>
+          <div class="cell">:-)</div>
+          <div class="cell">aaa</div>
+        </div>
+
+        <div class="body row">
+          <div class="cell" data-value="2">$ 2,-</div>
+          <div class="cell">:-D</div>
+          <div class="cell" data-value='bbb'>Bbb</div>
+        </div>
+
+        <div class="body row">
+          <div class="cell" data-value="1">$ 1,-</div>
+          <div class="cell">:-)</div>
+          <div class="cell">ddd</div>
+        </div>
+
+        <div class="body row">
+          <div class="cell" data-value="3">$ 3,-</div>
+          <div class="cell">:-D</div>
+          <div class="cell">ccc</div>
+        </div>
+
+        <div class="bottom row">
+          <div class="cell">$ 7,-</div>
+          <div class="cell">:-))</div>
+          <div class="cell">jjj</div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      initSortable();
+    </script>
+  </body>
+</html>
