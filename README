@@ -53,6 +53,8 @@ USAGE
       initSortable();
     </script>
 
+  Refer to example.html for more insights.
+
 
 DETAILS
   You can sort by number or string (date is on the TODO list (fork and
