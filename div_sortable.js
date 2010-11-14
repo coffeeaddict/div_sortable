@@ -77,13 +77,15 @@ function sortLink(tableCount, colCount, direction) {
 
     var fullId = id + "_" + tableCount + "_" + colCount;
 
-    // TODO : create element by prototype
-    return "<a data-noblock='true' " +
-        "id='" + fullId + "' href='#' class='sortlink'" +
-        "onclick='"+
-          func + "(" + tableCount + "," + colCount + ");" +
-          "setSelectedSortLink(\"" + fullId + "\"); return false;" +
-        "'>" + symbol + "</a>";
+    var a = new Element('a', {
+      'class': 'sortlink',
+      onclick: func + "(" + tableCount + "," + colCount + ");" + 
+               "setSelectedSortLink(\"" + fullId + "\"); return false;",
+      href:    '#',
+      id:      fullId
+    }).update(symbol);
+
+    return a;
 }
 
 /*
